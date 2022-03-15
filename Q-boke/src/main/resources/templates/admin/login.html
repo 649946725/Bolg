@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/admin :: head(~{::title})">
+    <title>后台登录</title>
+</head>
+<body>
+<br><br><br><br><br><br>
+
+<div class="m-contailer-small m-padded-tb-massive" style="max-width: 30em !important;margin: 0 auto">
+    <div class="ui container">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <h2 class="ui teal image header">
+                    <!--					<img src="assets/images/logo.png" class="image">-->
+                    <div class="content">
+                        后台管理登录
+                    </div>
+                </h2>
+                <form class="ui large form" method="post" th:action="@{/admin/login}">
+                    <div class="ui  segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="username" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" placeholder="密码">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="key icon"></i>
+                                <input type="text" name="code" placeholder="验证码"/>
+                                <div style="width: 5%"></div>
+                                <img th:src="@{/admin/captcha}" title="点击刷新"
+                                     onclick="this.src=this.src+'?d='+Math.random();"
+                                     alt="captcha" class="ui rounded image"/>
+                            </div>
+
+                        </div>
+                        <button class="ui fluid large teal submit button">登录</button>
+                    </div>
+
+                    <div class="ui error message"></div>
+                    <div class="ui negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--/*/ <th:block th:replace="comm/admin :: script"> /*/-->
+<!--/*/ </th:block> /*/-->
+<script>
+    $('.ui.form').form({
+        fields: {
+            username: {
+                identifier: 'username',
+                rules: [{
+                    type: 'empty',
+                    prompt: '请输入用户名'
+                }]
+            },
+            password: {
+                identifier: 'password',
+                rules: [{
+                    type: 'empty',
+                    prompt: '密码不能为空'
+                }]
+            },
+            code: {
+                identifier: 'code',
+                rules: [{
+                    type: 'empty',
+                    prompt: '请输入验证码'
+                }]
+            }
+        }
+    });
+</script>
+</body>
+</html>

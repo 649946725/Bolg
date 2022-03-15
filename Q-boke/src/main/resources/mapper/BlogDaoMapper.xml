@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qyzmode.dao.BlogDao">
+    <sql id="BASE_COLUMN_INSERT">
+        title,content,first_picture,flag,
+        views,appreciation,share_statement,commentabled,
+        published,recommend,create_time,update_time,
+        type_id,user_id,tag_id,description
+    </sql>
+    <sql id="BASE_COLUMN">
+        id,title,content,first_picture,flag,
+        views,appreciation,share_statement,commentabled,
+        published,recommend,create_time,update_time,
+        type_id,user_id,tag_id,description
+    </sql>
+    <select id="findBlogById" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        where id=#{id}
+    </select>
+    <select id="findByType" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        where published=true
+        <if test="type_id != -1">
+            and type_id=#{type_id}
+        </if>
+        order by update_time desc
+    </select>
+    <select id="findByTag" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        where published=true
+        <if test="tag_id != -1">
+            and LOCATE(#{tag_id},blog.tag_id)
+        </if>
+        order by update_time desc
+    </select>
+    <select id="selectBlog" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        where published=true order by update_time desc
+    </select>
+    <select id="selectBlogCount" resultType="java.lang.Integer">
+        select
+        count(blog.id)
+        from blog
+        where published=true
+    </select>
+    <select id="searchBlog" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        where
+        title like concat('%',#{search_text},'%')
+        or
+        content like concat('%',#{search_text},'%')
+        or
+        description like concat('%',#{search_text},'%')
+    </select>
+
+    <select id="findBlogTypeCountBy" resultType="com.qyzmode.prjo.BlogTypeOrTagCount">
+       SELECT type.id as id,type.`name` as name,count(blog.id) as size
+       FROM blog,type
+       WHERE type_id=type.id and blog.published=true GROUP BY type_id ORDER BY size DESC limit #{num}
+    </select>
+    <select id="findBlogTagCountBy" resultType="com.qyzmode.prjo.BlogTypeOrTagCount">
+     SELECT tag.id as id,tag.name as name,count(blog.id) as size
+       FROM blog,tag
+       where  LOCATE(tag.id,blog.tag_id) GROUP BY tag.id ORDER BY size desc limit #{num}
+    </select>
+    <select id="findRecommendByUpdateTimeBlog" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        where recommend=true order by update_time DESC limit #{num}
+    </select>
+    <select id="findBlogYear" resultType="java.lang.String">
+       select DATE_FORMAT(blog.update_time,'%Y') as year
+        FROM blog
+        GROUP BY year ORDER BY year DESC
+    </select>
+    <select id="findByYearBlog" resultType="com.qyzmode.prjo.Blog">
+       select
+        <include refid="BASE_COLUMN"/>
+        FROM blog
+        where DATE_FORMAT(blog.update_time,'%Y')=#{year}
+    </select>
+    <select id="findByConditionBlog" resultType="com.qyzmode.prjo.Blog">
+        select
+        <include refid="BASE_COLUMN"/>
+        from blog
+        <where>
+            <if test="blog.title!=null and  blog.title!='' ">
+                title like concat('%',#{blog.title},'%')
+            </if>
+            <if test="blog.type_id!=null">
+                and type_id=#{blog.type_id}
+            </if>
+            <if test="blog.recommend!=false">
+                and recommend=#{blog.recommend}
+            </if>
+        </where>
+        order by update_time desc
+    </select>
+    <insert id="insertBlog">
+        insert into blog
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <include refid="BASE_COLUMN_INSERT"/>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{blog.title},#{blog.content},#{blog.first_picture},#{blog.flag},#{blog.views},
+            #{blog.appreciation}, #{blog.share_statement},#{blog.commentabled},
+            #{blog.published},#{blog.recommend},#{blog.create_time},#{blog.update_time},
+            #{blog.type_id},#{blog.user_id},#{blog.tag_id},#{blog.description}
+        </trim>
+    </insert>
+    <update id="updateBlog">
+        update blog
+        <set>
+            <if test="blog.title!=null and  blog.title!=''">
+                title=#{blog.title},
+            </if>
+            <if test="blog.content!=null and blog.content!=''">
+                content=#{blog.content},
+            </if>
+            <if test="blog.first_picture!=null and blog.first_picture!=''">
+                first_picture=#{blog.first_picture},
+            </if>
+            <if test="blog.flag!=null and blog.flag!=''">
+                flag=#{blog.flag},
+            </if>
+            <if test="blog.views!=null">
+                views=#{blog.views},
+            </if>
+            <if test="blog.appreciation!=null">
+                appreciation=#{blog.appreciation},
+            </if>
+            <if test="blog.share_statement!=null">
+                share_statement=#{blog.share_statement},
+            </if>
+            <if test="blog.commentabled!=null">
+                commentabled=#{blog.commentabled},
+            </if>
+            <if test="blog.published!=null">
+                published=#{blog.published},
+            </if>
+            <if test="blog.recommend!=null">
+                recommend=#{blog.recommend},
+            </if>
+            <if test="blog.create_time!=null">
+                create_time=#{blog.create_time},
+            </if>
+            <if test="blog.update_time!=null">
+                update_time=#{blog.update_time},
+            </if>
+            <if test="blog.type_id!=null">
+                type_id=#{blog.type_id},
+            </if>
+            <if test="blog.user_id!=null">
+                user_id=#{blog.user_id},
+            </if>
+            <if test="blog.tag_id!=null">
+                tag_id=#{blog.tag_id},
+            </if>
+            <if test="blog.description!=null and blog.description!=''">
+                description=#{blog.description},
+            </if>
+        </set>
+        where id=#{blog.id}
+    </update>
+    <delete id="deleteBlog">
+        delete from blog where id=#{blog.id}
+    </delete>
+    <update id="updateView">
+        update blog set views=views+1 where id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/head :: head(~{::title})">
+    <title>归档</title>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="comm/head :: nav_menu(4)"></nav>
+<!-- 中间内容 -->
+<div class="m-contailer-small m-padded-tb-big">
+    <div class="ui container">
+        <!-- header -->
+        <div class="ui top attached padded segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">归档</h3>
+                </div>
+                <div class="right aligned column">
+                    共 <h2 class="ui orange header m-iline-blok m-text-thin" th:text="${blog_count}"> 14 </h2> 篇博客
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <th:block th:each="item:${archives}">
+            <h2 class="ui center aligned header" th:text="${item.key}">2020</h2>
+            <div class="ui fluid vertical menu">
+                <a th:href="@{/blog/{id}/detail(id=${blog.id})}" target="_blank" class="item" th:each="blog:${item.value}">
+					<span>
+						<i class="teal circle icon"></i><span th:text="${blog.title}"></span>
+						<div class="ui teal basic left pointing label m-padded-mini" th:text="${#dates.format(blog.update_time,'M-dd')}">7月13</div>
+					</span>
+                    <div class="ui orange basic left pointing label m-padded-mini" th:text="${blog.flag}">原创</div>
+                </a>
+
+            </div>
+        </th:block>
+
+        <!--  -->
+    </div>
+</div>
+<br>
+<br>
+
+<footer th:replace="comm/footer :: footer"></footer>
+<!--/*/ <th:block th:replace="comm/footer :: script"> /*/-->
+<!--/*/ </th:block> /*/-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item ').toggleClass('m-mobile-hide')
+    });
+</script>
+</body>
+</html>

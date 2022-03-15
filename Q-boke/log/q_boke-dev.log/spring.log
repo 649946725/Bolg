@@ -1,0 +1,16 @@
+2021-10-04 19:05:16.156  INFO 45404 --- [restartedMain] com.qyzmode.QBokeApplication             : Starting QBokeApplication using Java 1.8.0_241 on LAPTOP-3NLH7VAO with PID 45404 (D:\javaweb\q_Boke\Q-boke\target\classes started by QYZ in D:\javaweb\q_Boke\Q-boke)
+2021-10-04 19:05:16.164 DEBUG 45404 --- [restartedMain] com.qyzmode.QBokeApplication             : Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-10-04 19:05:16.165  INFO 45404 --- [restartedMain] com.qyzmode.QBokeApplication             : The following profiles are active: dev
+2021-10-04 19:05:16.271  INFO 45404 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-04 19:05:16.272  INFO 45404 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-04 19:05:18.172  INFO 45404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-04 19:05:18.181  INFO 45404 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-04 19:05:18.181  INFO 45404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-10-04 19:05:18.250  INFO 45404 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-04 19:05:18.250  INFO 45404 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1977 ms
+2021-10-04 19:05:18.356  INFO 45404 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-10-04 19:05:18.850  INFO 45404 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-10-04 19:05:20.054  INFO 45404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-10-04 19:05:20.442  INFO 45404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-04 19:05:20.475  INFO 45404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-10-04 19:05:20.483  INFO 45404 --- [restartedMain] com.qyzmode.QBokeApplication             : Started QBokeApplication in 4.933 seconds (JVM running for 6.282)

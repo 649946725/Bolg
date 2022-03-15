@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qyzmode.dao.TagDao">
+    <!--    通过id查询Type-->
+    <select id="findTagById" resultType="com.qyzmode.prjo.Tag">
+        select id,name
+        from tag
+        where id=#{id}
+    </select>
+    <!--    通过name查询Type-->
+    <select id="findTagByName" resultType="com.qyzmode.prjo.Tag">
+        select id,name
+        from tag
+        where name=#{name}
+    </select>
+    <!--    分页查询type-->
+    <select id="selectTag" resultType="com.qyzmode.prjo.Tag">
+        select id,name
+        from tag
+    </select>
+<!--添加type-->
+    <insert id="insertTag">
+       insert into
+        tag (id,name)
+         values (#{tag.id},#{tag.name})
+   </insert>
+<!--    更新Type-->
+    <update id="updateTag">
+         update tag set name=#{tag.name} where id=#{tag.id}
+    </update>
+<!--   删除Type-->
+    <delete id="deleteTag">
+        delete from tag where id=#{id}
+    </delete>
+</mapper>

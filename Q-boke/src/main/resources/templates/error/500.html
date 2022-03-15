@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/head :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>500</title>
+</head>
+<body>
+<!-- 导航 -->
+<nav th:replace="comm/head :: nav_menu(0)"></nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="m-contailer-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-massive">
+        <div class="ui container">
+            <h2>系统内部错误</h2>
+            <p>The page you are looking for is not here.</p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer th:replace="comm/footer :: footer"></footer>
+</body>
+</html>

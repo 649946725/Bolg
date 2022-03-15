@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qyzmode.dao.TypeDao">
+    <!--    通过id查询Type-->
+    <select id="findTypeById" resultType="com.qyzmode.prjo.Type">
+        select id,name
+        from type
+        where id=#{id}
+    </select>
+    <!--    通过name查询Type-->
+    <select id="findTypeByName" resultType="com.qyzmode.prjo.Type">
+        select id,name
+        from type
+        where name=#{name}
+    </select>
+    <!--    分页查询type-->
+    <select id="selectType" resultType="com.qyzmode.prjo.Type">
+        select id,name
+        from type
+    </select>
+<!--添加type-->
+    <insert id="insertType">
+       insert into
+        type (id,name)
+         values (#{type.id},#{type.name})
+   </insert>
+<!--    更新Type-->
+    <update id="updateType">
+         update type set name=#{type.name} where id=#{type.id}
+    </update>
+<!--   删除Type-->
+    <delete id="deleteType">
+        delete from type where id=#{id}
+    </delete>
+</mapper>

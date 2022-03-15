@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qyzmode.dao.UserDao">
+
+    <!--   基本列-->
+    <sql id="BASE_COLUMN">
+      id,nick_name,username,password,email,avatar,type,create_time,update_time
+    </sql>
+
+    <select id="findByUsernameAndPassword" resultType="com.qyzmode.prjo.User">
+        select
+        <include refid="BASE_COLUMN"/>
+        from user
+        where
+        username=#{username} and password=#{password}
+    </select>
+    <select id="findById" resultType="com.qyzmode.prjo.User">
+        select
+        <include refid="BASE_COLUMN"/>
+        from user
+        where
+        id=#{id}
+    </select>
+</mapper>

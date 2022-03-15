@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/admin :: head(~{::title})">
+    <title>博客标签</title>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="comm/admin :: nav_menu(3)"></nav>
+
+
+<!--  -->
+<div class="ui attached pointing menu">
+    <div class="ui container">
+        <div class="right menu">
+            <a th:href="@{/admin/tags}" class="teal active item">列表</a>
+            <a th:href="@{/admin/tags/add-tag}" class="item">新增</a>
+        </div>
+
+    </div>
+
+</div>
+<!--  -->
+<div class="m-contailer-small m-padded-tb-big">
+    <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${message}"></p>
+        </div>
+        <table class="ui  teal table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tag,iterStat : ${page.list}">
+                <td th:text="${iterStat.count}">1</td>
+                <td th:text="${tag.name}">刻意练习清单</td>
+                <td>
+
+                    <a th:href="@{/admin/tags/{id}/edit-tag(id=${tag.id})}"  class="ui mini teal basic button">编辑</a>
+                    <a th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="6">
+
+                    <div class="ui  mini pagination menu" th:if="${page.pages}!='1'">
+
+                        <a th:href="@{/admin/tags(pageNum=${page.hasPreviousPage}?${page.prePage}:1)}" th:if="${page.hasPreviousPage}" class="icon item">上一页</a>
+                        <a th:href="@{/admin/tags(pageNum=${page.hasNextPage}?${page.nextPage}:${page.pages})}" th:if="${page.hasNextPage}" class="icon item">下一页</a>
+                    </div>
+
+                    <a th:href="@{/admin/tags/add-tag}" class="ui mini right floated teal basic button">新增</a>
+
+
+                </th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer th:replace="/comm/admin :: footer"></footer>
+<!--/*/ <th:block th:replace="comm/admin :: script"> /*/-->
+<!--/*/ </th:block> /*/-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item ').toggleClass('m-mobile-hide')
+    });
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    $('.message .close').on('click',function () {
+        $(this).closest('.message').transition('fade')
+    })
+</script>
+</body>
+</html>

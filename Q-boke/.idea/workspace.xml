@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8a7e20c7-be20-42a5-8165-bb47bd0668f8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="mybatis-mapper" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Maven\repository" />
+        <option name="mavenHome" value="D:/Maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1vG6Ow24ppW30uIwh1SB8EjUGIS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\javaweb\q_Boke\Q-boke\src\main\resources\static\lib\qrcode" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qyzmode.controller.admin" />
+      <recent name="com.qyzmode.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\javaweb\q_Boke\Q-boke\src\main\resources\templates" />
+      <recent name="D:\javaweb\q_Boke\Q-boke\src\main\resources\templates\admin" />
+      <recent name="D:\javaweb\q_Boke\Q-boke\src\main\resources\mapper" />
+      <recent name="D:\javaweb\q_Boke\Q-boke\src\main\resources\templates\error" />
+      <recent name="D:\javaweb\q_Boke\Q-boke\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.QBokeApplication">
+    <configuration name="B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.qyzmode.exception.B" />
+      <module name="Q-boke" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qyzmode.exception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QBokeApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Q-boke" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qyzmode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qyzmode" />
+      <option name="MAIN_CLASS_NAME" value="com.qyzmode.QBokeApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QBokeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Q-boke" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.qyzmode.QBokeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.B" />
+      <item itemvalue="JUnit.QBokeApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.QBokeApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.B" />
+        <item itemvalue="JUnit.QBokeApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8a7e20c7-be20-42a5-8165-bb47bd0668f8" name="Default Changelist" comment="" />
+      <created>1626176049907</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626176049907</updated>
+      <workItem from="1626176060862" duration="13493000" />
+      <workItem from="1626222138453" duration="18568000" />
+      <workItem from="1626248465459" duration="21387000" />
+      <workItem from="1626319862568" duration="3404000" />
+      <workItem from="1626326287754" duration="9069000" />
+      <workItem from="1626339136672" duration="15519000" />
+      <workItem from="1626400048472" duration="33718000" />
+      <workItem from="1626487805645" duration="276000" />
+      <workItem from="1626488345645" duration="40152000" />
+      <workItem from="1626614000364" duration="8000" />
+      <workItem from="1626614227002" duration="51000" />
+      <workItem from="1626672066126" duration="14403000" />
+      <workItem from="1626748913547" duration="12121000" />
+      <workItem from="1626761410967" duration="957000" />
+      <workItem from="1626836312343" duration="23905000" />
+      <workItem from="1626920266999" duration="10253000" />
+      <workItem from="1626966960982" duration="2827000" />
+      <workItem from="1627004225381" duration="10435000" />
+      <workItem from="1627094907007" duration="2154000" />
+      <workItem from="1627191153226" duration="1234000" />
+      <workItem from="1627271088110" duration="1203000" />
+      <workItem from="1627372406470" duration="1253000" />
+      <workItem from="1627459199142" duration="972000" />
+      <workItem from="1627531840890" duration="1238000" />
+      <workItem from="1627631910004" duration="1493000" />
+      <workItem from="1627697249077" duration="210000" />
+      <workItem from="1627697657896" duration="783000" />
+      <workItem from="1627797300032" duration="3686000" />
+      <workItem from="1627886431760" duration="2664000" />
+      <workItem from="1627951009400" duration="5283000" />
+      <workItem from="1628039581773" duration="1815000" />
+      <workItem from="1628306182642" duration="1261000" />
+      <workItem from="1628394678114" duration="8718000" />
+      <workItem from="1628565140014" duration="2633000" />
+      <workItem from="1628656914157" duration="1207000" />
+      <workItem from="1628922510534" duration="4328000" />
+      <workItem from="1629083709373" duration="1218000" />
+      <workItem from="1629265886003" duration="1204000" />
+      <workItem from="1630578948270" duration="1154000" />
+      <workItem from="1633345486676" duration="1571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Assign_Data_Sources" timestamp="1626237437783">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Assign_Data_Sources/0.0.1536.824@0.0.1536.824" timestamp="1626237437783" />
+    <state x="361" y="71" key="#Auto_Import" timestamp="1626839956021">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Auto_Import/0.0.1536.824@0.0.1536.824" timestamp="1626839956021" />
+    <state x="234" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1626507097987">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="234" y="47" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1626507097987" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1627954667470">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1627954667470" />
+    <state x="428" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1627956983232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="428" y="93" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1627956983232" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627462668926">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1627462668926" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1626969596654">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1626969596654" />
+    <state width="1493" height="510" key="GridCell.Tab.0.bottom" timestamp="1633345526939">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1633345526939" />
+    <state width="1493" height="510" key="GridCell.Tab.0.center" timestamp="1633345526939">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1633345526939" />
+    <state width="1493" height="510" key="GridCell.Tab.0.left" timestamp="1633345526938">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1633345526938" />
+    <state width="1493" height="510" key="GridCell.Tab.0.right" timestamp="1633345526939">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1633345526939" />
+    <state width="1493" height="510" key="GridCell.Tab.1.bottom" timestamp="1633345526940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1633345526940" />
+    <state width="1493" height="510" key="GridCell.Tab.1.center" timestamp="1633345526940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1633345526940" />
+    <state width="1493" height="510" key="GridCell.Tab.1.left" timestamp="1633345526940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1633345526940" />
+    <state width="1493" height="510" key="GridCell.Tab.1.right" timestamp="1633345526940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="510" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1633345526940" />
+    <state width="212" height="539" key="HiddenNamespacesPopup" timestamp="1626241502394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="212" height="539" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1626241502394" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1627956984159">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1627956984159" />
+    <state x="540" y="103" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1627013036450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="540" y="103" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1627013036450" />
+    <state x="0" y="0" width="803" height="824" key="find.popup" timestamp="1628481320407">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" width="803" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1628481320407" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1626758887228">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1626758887228" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1628567870908">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1628567870908" />
+  </component>
+</project>

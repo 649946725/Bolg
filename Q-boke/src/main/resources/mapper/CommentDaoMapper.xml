@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qyzmode.dao.CommentDao">
+
+    <sql id="BASE_COLUMN">
+
+        id,nickname,email,content,avatar,create_time,
+        blog_id,parent_comment_id
+
+    </sql>
+    <sql id="BASE_COLUMN_INSERT">
+
+        nickname,email,content,avatar,create_time,
+        blog_id,parent_comment_id
+
+    </sql>
+    <select id="findByBlogId" resultType="com.qyzmode.prjo.Comment">
+        select <include refid="BASE_COLUMN" />
+        from comment
+        where blog_id=#{blog_id} and parent_comment_id is null order by create_time
+    </select>
+    <select id="findChildComment" resultType="com.qyzmode.prjo.Comment">
+        select <include refid="BASE_COLUMN" />
+        from comment
+        where
+                parent_comment_id=#{parent_comment_id}
+    </select>
+     <insert id="insertComment">
+         insert into  comment
+         <trim prefix="(" suffix=")" suffixOverrides=",">
+             <include refid="BASE_COLUMN_INSERT" />
+         </trim>
+         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+             #{comment.nickname}, #{comment.email}, #{comment.content}, #{comment.avatar},
+             #{comment.create_time}, #{comment.blog_id},#{comment.parent_comment_id}
+         </trim>
+     </insert>
+</mapper>

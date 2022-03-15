@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/admin :: head(~{::title})">
+		<title>首页</title>
+	</head>
+	<body>
+
+		<!-- 导航 -->
+		<nav th:replace="comm/admin :: nav_menu(0)"></nav>
+
+		<!--  -->
+
+		<!--  -->
+		<br>
+		<div class="m-contailer-small m-padded-tb-big">
+			<div class="ui container">
+				<div class="ui success large message">
+					<h3>Hi</h3>
+					<p th:text="${session.user.nick_name}+'，欢迎登录！'">秦宇泽，欢迎登录！</p>
+				</div>
+				<img src="https://unsplash.it/1000/400?image=1005" alt="" class="ui rounded bordered fluid image">
+			</div>
+		</div>
+		<br>
+		<br>
+		<footer th:replace="/comm/admin :: footer"></footer>
+		<!--/*/ <th:block th:replace="comm/admin :: script"> /*/-->
+		<!--/*/ </th:block> /*/-->
+		<script>
+			$('.menu.toggle').click(function() {
+				$('.m-item ').toggleClass('m-mobile-hide')
+			});
+			$('.ui.dropdown').dropdown({
+				on: 'hover'
+			});
+
+		</script>
+	</body>
+</html>

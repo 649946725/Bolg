@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/head :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+<!-- 导航 -->
+<nav th:replace="comm/head :: nav_menu(0)"></nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="m-contailer-small m-padded-tb-massive">
+    <div class="ui error message m-padded-tb-massive">
+        <div class="ui container">
+            <h2>404</h2>
+            <p>对不起，您访问的资源不存在！</p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer th:replace="comm/footer :: footer"></footer>
+</body>
+</html>

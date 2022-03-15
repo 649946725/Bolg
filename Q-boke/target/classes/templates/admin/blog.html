@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/admin :: head(~{::title})">
+	<title>博客管理</title>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="comm/admin :: nav_menu(1)"></nav>
+
+
+<!--  -->
+<div class="ui attached pointing menu">
+	<div class="ui container">
+		<div class="right menu">
+			<a th:href="@{/admin/blog}" class="teal active item">列表</a>
+			<a th:href="@{/admin/blog/fabu}" class="item">发布</a>
+		</div>
+
+	</div>
+
+</div>
+<!--  -->
+<div class="m-contailer-small m-padded-tb-big">
+	<div class="ui container">
+		<div  method="post" class="ui secondary segment form">
+			<input type="hidden" name="page"/>
+			<div class="inline fields">
+				<div class="field">
+					<input type="text" name="title" placeholder="标题" />
+				</div>
+				<div class="field">
+					<div class="ui labeled action input">
+						<div class="ui type selection dropdown">
+							<input type="hidden" name="type_id" />
+							<i class="dropdown icon"></i>
+							<div class="default text">分类</div>
+							<div class="menu">
+								<div class="item" th:each="type:${types}" th:data-value="${type.id}" th:text="${type.name}">
+
+								</div>
+								<!--									<div class="item" data-value="2">-->
+								<!--										开发手册-->
+								<!--									</div>-->
+							</div>
+						</div>
+						<button id="clear-btn" class="ui clear button">重置</button>
+					</div>
+
+				</div>
+				<div class="field">
+					<div class="ui checkbox">
+						<input type="checkbox" name="recommend" id="recommend" />
+						<label for="recommend">
+							推荐
+						</label>
+					</div>
+				</div>
+				<div class="field">
+					<button type="button" id="serach-btn"  class="ui mini teal basic button"><i class="search icon"></i>搜索</button>
+				</div>
+			</div>
+		</div>
+		<div id="table-container">
+			<table th:fragment="bloglist"  class="ui teal table">
+				<thead>
+				<tr>
+					<th></th>
+					<th>标题</th>
+					<th>类型</th>
+					<th>推荐</th>
+					<th>状态</th>
+					<th>更新时间</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="blog,iterStat : ${page.list}">
+					<td th:text="${iterStat.count}"></td>
+					<td th:text="${blog.title}"></td>
+					<td th:text="${blog.type}">认知升级</td>
+					<td th:text="${blog.recommend}? '是':'否' "></td>
+					<td th:text="${blog.published}? '发布':'草稿' "></td>
+					<td th:text="${blog.update_time}">2021-07-13 12：00</td>
+					<td>
+						<!--					th:href="@{/admin/blog/{id}/edit-blog(id=${blog.id})}"
+                                th:href="@{/admin/blog/{id}/delete(id=${blog.id})}" -->
+						<a th:href="@{/admin/blog/{id}/edit-blog(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
+						<a  th:href="@{/admin/blog/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>
+					</td>
+				</tr>
+				</tbody>
+				<tfoot>
+				<tr>
+					<th colspan="7">
+
+						<div class="ui  mini pagination menu" th:if="${page.pages}!='1'">
+							<a onclick="page(this)" th:attr="data-page=${page.prePage}"  th:if="${page.prePage}" class="icon item">上一页</a>
+							<a onclick="page(this)" th:attr="data-page=${page.nextPage}" th:if="${page.nextPage}" class="icon item">下一页</a>
+						</div>
+						<a th:href="@{/admin/blog/fabu}" class="ui mini right floated teal basic button">新增</a>
+
+
+					</th>
+				</tr>
+				</tfoot>
+			</table>
+			<div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+				<i class="close icon"></i>
+				<div class="header">提示：</div>
+				<p th:text="${message}"></p>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer th:replace="/comm/admin :: footer"></footer>
+<!--/*/ <th:block th:replace="comm/admin :: script"> /*/-->
+<!--/*/ </th:block> /*/-->
+<script>
+	$('.menu.toggle').click(function() {
+		$('.m-item ').toggleClass('m-mobile-hide')
+	});
+	$('.ui.dropdown').dropdown({
+		on: 'hover'
+	});
+	$('#serach-btn').click(function () {
+		loadBlogList()
+	})
+	function page(obj)
+	{
+		$("[name='page']").val($(obj).data("page"))
+		loadBlogList()
+	}
+	$('#clear-btn').on('click',function () {
+          $('.ui.type.dropdown').
+		  dropdown('clear')
+	})
+	$('.message .close').on('click',function () {
+		$(this).closest('.message').transition('fade')
+	})
+	function loadBlogList() {
+		$('#table-container').load(/*[[@{/admin/blog/serach}]]*/"/admin/blog/serach",{
+			title:$("[name='title']").val(),
+			type_id:$("[name='type_id']").val(),
+			recommend:$("[name='recommend']").prop('checked'),
+			pageNum:$("[name='page']").val(),
+		})
+	}
+</script>
+</body>
+</html>

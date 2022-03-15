@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="comm/admin :: head(~{::title})">
+    <title>添加分类</title>
+</head>
+<body>
+
+
+<!-- 导航 -->
+<nav th:replace="comm/admin :: nav_menu(2)"></nav>
+
+
+<!--  -->
+<div class="ui attached pointing menu">
+    <div class="ui container">
+        <div class="right menu">
+            <a th:href="@{/admin/types}" class="item">列表</a>
+            <a th:href="@{/admin/types/add-type}" class="teal active item">新增</a>
+        </div>
+
+    </div>
+
+</div>
+<!--  -->
+<br>
+<br>
+
+<div class="m-contailer-small m-padded-tb-big">
+    <div class="ui container">
+        <form action="#" method="post" th:action=" ${type} ? @{/admin/editType/{id}(id=${type.id})} : @{/admin/addType}" class="ui form">
+<input type="hidden" th:value="${type}? ${type.id}:''">
+            <div class="required field">
+                <div class="ui left labeled  input">
+                    <label class="ui  teal basic label">名称</label>
+                    <input type="text" name="name" placeholder="分类名称" th:value="${type}? ${type.name}:''"/>
+                </div>
+            </div>
+
+
+            <div class="ui error message">
+
+            </div>
+            <div class="ui negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">
+
+            </div>
+            <div class="ui right aligned container">
+                <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                <button class="ui teal submit button">提交</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer th:replace="/comm/admin :: footer"></footer>
+<!--/*/ <th:block th:replace="comm/admin :: script"> /*/-->
+<!--/*/ </th:block> /*/-->
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item ').toggleClass('m-mobile-hide')
+    });
+    $('.ui.dropdown').dropdown({
+        on: 'hover'
+    });
+    $('.ui.form').form({
+        fields: {
+            name: {
+                identifier: 'name',
+                rules: [{
+                    type: 'empty',
+                    prompt: '请输入分类名称'
+                }]
+            }
+        }
+    });
+</script>
+</body>
+</html>
